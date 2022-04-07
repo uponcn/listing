@@ -10,7 +10,8 @@ import (
 	"encoding/binary"
 )
 
-var ROOT = ".\\data\\"
+var SEP = string(os.PathSeparator)
+var ROOT = "." + SEP + "data" + SEP
 var STACK *sync.RWMutex = new(sync.RWMutex)
 
 func Show(){
