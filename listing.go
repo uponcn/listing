@@ -491,6 +491,13 @@ func StackGetAll(info []byte) []byte {
 	return res
 }
 
+func StackLens( info []byte ) int {
+	if info[0] < 25 {
+		return int( info[0] )
+	}
+	return int( Uint64Big(info[10:18]) )
+}
+
 func StackStruct(info []byte) []byte {
 	pos := int64(Uint64Big(info[2:10]))
 	size := int64(Uint64Big(info[10:18]))
